@@ -1,0 +1,233 @@
+/* CSS has a Z index/axis. Meaning if y axis is verticle and x axis is horizontal
+  then x is depth i.e. how close something is to you or even maybe layers
+
+  Mobile friendly sites are exteremly important. Some sites are optimized to be
+  desktop and mobile friendly, OR, some companies have a separate site just for
+  mobile so that when you try to go to thier site it redirects you to the mobile
+  version. I'm sure having a separate app also helps.
+
+  Though the best solution is to just make it responsive on all devices and one way
+  to do this is through media query break points which is just pure CSS
+
+  @media {} (media queries) are used when you want a certain style but only under
+  certain conditions
+
+  The structure for media query is: @media type/condition (feature/rule) {style}
+
+  You can also create a range of when you want your feature to occur
+  EX. @media (min-width: 900px) and (max-width: 1000px) {h1 {font-size: 60px } }
+  With this example the feature will only be triggered on a viewport bigger than
+  900px and smaller than 1000px i.e. there's only a 100px range where this is
+  going to work
+
+  Viewport is the window your site is on so not the device screen, not the browser
+  window but the actual real estate the site is showing on, which is usually within a
+  browser window unless you're on an app
+
+  You may have to repeat yourself for the sake of modularity
+
+  Remember id's are specific and their styles get applied over everything else in the
+  hierarchy EXCEPT for inline CSS so it goes inline, id's, classes, html elements
+
+  For this reason use id's sparingly, don't use them when you can use a class. For the
+  example here we used them to separate the sections of the web page. Always consider using
+  a class instead of an id. ALSO AVOID inline CSS as much as possible!
+
+                      Picking and Mixing Selectors
+
+  Selectors are separated by commas EX. h1, h2, h3, h4, h5, p { styling }
+
+  Hierarchical Selectors are a little different because you have to know how they work
+  you don't use commas here you use a space EX. selector1 selector2 { styling }. You should only
+  have one space and the first selector should be the parent of the second one
+
+  Combined Selectors is when you combine an html element with a selector like a class
+  or id. You do this by having no space EX. selector1.selector2 { styling }
+  EX. selector1#selector2 { styling } */
+
+body {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+}
+
+p {
+  color: #8f8f8f;
+}
+
+/* Headings */
+
+.big-heading {
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+.section-heading {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+/* Containers */
+
+.container-fluid {
+  padding: 7% 15%;
+}
+
+.colored-section {
+  background-color: #ff4c68;
+  color: #fff;
+}
+
+.white-section {
+  background-color: #fff;
+}
+
+/* Navigation Bar */
+
+.navbar {
+  padding-bottom: 4.5rem;
+}
+
+.navbar-brand {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.nav-item {
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding: 0 20px;
+}
+
+/* Download Buttons */
+/* Its best practice to not target the bootstrap classes in your own custom css bc you can run into problems
+  down the road */
+  .download-button {
+    margin: 5% 5% 5% 0;
+  }
+
+/* Title Section */
+
+#title .container-fluid {
+  padding: 3% 15% 7%;
+  text-align: left;
+}
+
+/* Title Image */
+
+.title-img-parent {
+  position: relative;
+}
+
+.title-img {
+  transform: rotate(25deg);
+  width: 60%;
+  position: absolute;
+  right: 25%;
+}
+
+/* Features Section */
+
+#features {
+  position: relative;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+}
+
+.feature-box {
+  padding: 5%;
+  line-height: 1.5;
+}
+
+.icon {
+  color: #ef8172;
+  padding-bottom: 1.5rem;
+}
+
+.icon:hover {
+  color: #ff4c68;
+}
+
+/* Testimonials Section */
+
+#testimonials { /* Side note: its good to have alternating colors on a one page site so people know when a new section is starting */
+  background-color: #ef8172;
+}
+
+.testimonial-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.testimonial-image {
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+/* Press Section (grouped together with Testimonials Section) */
+
+#press {
+  background-color: #ef8172;
+  padding-bottom: 7%;
+}
+
+.press-logo {
+  width: 12%;
+  margin: 0 5% 0 5%;
+}
+
+/* Pricing Section */
+
+#pricing {
+  padding: 100px;
+}
+
+.pricing-column {
+  padding: 3% 2%;
+}
+
+.price-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.pricing-button {
+  width: 100%;
+}
+
+/* Footer Section */
+
+#footer {
+  font-size: 0.85rem;
+}
+
+.footer-contact-links {
+  padding: 1.1rem 0.625rem;
+  text-decoration: none;
+  color: black;
+}
+
+.footer-contact-links:hover {
+  color: #8f8f8f;
+  cursor: pointer;
+}
+
+/* Media Queries */
+
+@media (max-width: 1028px) { /* restyles for smaller viewports */
+  #title {
+    text-align: center;
+  }
+
+  .title-img {
+    position: static;
+    transform: none;
+  }
+}
